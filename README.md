@@ -1,5 +1,7 @@
 # Calculator MCP Server
 
+[![smithery badge](https://smithery.ai/badge/@geobio/mcp-server-calculator)](https://smithery.ai/server/@geobio/mcp-server-calculator)
+
 A Model Context Protocol server for calculating. This server enables LLMs to use calculator for precise numerical calculations.
 
 ### Available Tools
@@ -8,6 +10,14 @@ A Model Context Protocol server for calculating. This server enables LLMs to use
   - `expression` (string, required): Expression to be calculated
 
 ## Installation
+
+### Installing via Smithery
+
+To install mcp-server-calculator for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@geobio/mcp-server-calculator):
+
+```bash
+npx -y @smithery/cli install @geobio/mcp-server-calculator --client claude
+```
 
 ### Using uv (recommended)
 
@@ -45,6 +55,7 @@ Add this to your MCP client settings:
     "args": ["mcp-server-calculator"]
   }
 }
+}
 ```
 
 ### Using PIP
@@ -57,6 +68,7 @@ Alternatively add this to your MCP client settings:
     "command": "python",
     "args": ["-m", "mcp_server_calculator"]
   }
+}
 }
 ```
 
