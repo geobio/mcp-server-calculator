@@ -51,7 +51,7 @@ def evaluate(expression: str) -> str:
     result = eval_expr(parsed_expr.body)
     return str(result)
 
-mcp = FastMCP("calculator", host="0.0.0.0")
+mcp = FastMCP("calculator")
 
 @mcp.custom_route("/health", methods=["GET"])
 async def health(request: Request) -> JSONResponse:
@@ -64,4 +64,4 @@ async def calculate(expression: str) -> str:
     return evaluate(expression)
 
 def main():
-    mcp.run(transport="streamable-http")
+    mcp.run()

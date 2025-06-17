@@ -16,7 +16,7 @@ classifiers = [
     "Programming Language :: Python :: 3.10",
 ]
 dependencies = [
-    "mcp>=1.9.4",
+    "mcp>=1.4.1",
 ]
 
 [project.scripts]

@@ -23,11 +23,5 @@ COPY --from=uv /root/.local /root/.local
 COPY --from=uv --chown=app:app /app/.venv /app/.venv
 
 ENV PATH="/app/.venv/bin:$PATH"
-# Crucial: Bind to all interfaces inside container
-ENV FASTMCP_HOST=0.0.0.0
-# Default port, or whatever you configure fastmcp to use
-ENV FASTMCP_PORT=8000
-# Document the port
-EXPOSE 8000
 
 ENTRYPOINT ["mcp-server-calculator"]
