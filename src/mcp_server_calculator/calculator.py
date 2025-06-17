@@ -2,8 +2,6 @@ import ast
 import operator
 import math
 from mcp.server.fastmcp import FastMCP
-from starlette.requests import Request
-from starlette.responses import JSONResponse
 
 def evaluate(expression: str) -> str:
     allowed_operators = {
@@ -52,11 +50,6 @@ def evaluate(expression: str) -> str:
     return str(result)
 
 mcp = FastMCP("calculator")
-
-@mcp.custom_route("/health", methods=["GET"])
-async def health(request: Request) -> JSONResponse:
-    """Returns the health status of the server."""
-    return JSONResponse({"status": "healthy"})
 
 @mcp.tool()
 async def calculate(expression: str) -> str:
